@@ -1,0 +1,24 @@
+name: Example Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Name of the user'
+        required: true
+        default: 'World'
+      greeting:
+        description: 'Greeting message'
+        required: true
+        default: 'Hello'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Print greeting
+      run: echo "${{ github.event.inputs.greeting }} ${{ github.event.inputs.name }}!"
