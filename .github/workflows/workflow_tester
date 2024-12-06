@@ -1,3 +1,4 @@
+---
 name: Example Workflow
 
 on:
@@ -16,12 +17,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
-       matrix:
-          os: [ubuntu-latest, windows-latest]
+      matrix:
+        info: [ubuntu-latest, windows-latest]
         node: [1, 2, 3]
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
     - name: Print greeting
-      run: echo "${{matrix.os}} ${{matrix.node}} ${{ github.event.inputs.greeting }} ${{ github.event.inputs.name }}!"
+      run: echo "${{ matrix.info }} ${{ matrix.node }} ${{ github.event.inputs.greeting }} ${{ github.event.inputs.name }}!"
+
