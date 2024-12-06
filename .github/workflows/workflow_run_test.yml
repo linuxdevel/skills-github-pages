@@ -29,7 +29,7 @@ jobs:
       #- name: Run a one-line script
     workflow_tester:
           name: "Workflow tester - calling a different workflow"
-          uses: linuxdevel/skills-github-page/.github/workflows/workflow_tester.yaml@v2.2.2
+          uses: linuxdevel/skills-github-page/.github/workflows/workflow_tester.yml@v2.2.2
           with:
                 name: "Arne"
                 greeting: "Hei på deg"
